@@ -3,8 +3,10 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 
-import { AppRoutingModule, navigatableComponents } from "./app.routing";
-import { AppComponent } from "./app.component";
+import { AppRoutingModule, navigatableComponents } from "~/app.routing";
+import { AppComponent } from "~/app.component";
+import { AndroidPermissionService } from "~/mobile/services/android-permission.service";
+import { ReadSimCardDataService } from "~/mobile/services/read-sim-card-data.service";
 
 @NgModule({
 	bootstrap: [
@@ -21,6 +23,8 @@ import { AppComponent } from "./app.component";
 		...navigatableComponents
 	],
 	providers: [
+		AndroidPermissionService,
+		ReadSimCardDataService
 	],
 	schemas: [
 		NO_ERRORS_SCHEMA

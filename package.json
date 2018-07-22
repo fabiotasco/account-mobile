@@ -24,6 +24,7 @@
 		"@angular/router": "~6.0.0",
 		"nativescript-angular": "~6.0.0",
 		"nativescript-permissions": "^1.2.3",
+		"nativescript-telephony": "^1.0.4",
 		"nativescript-theme-core": "~1.0.4",
 		"reflect-metadata": "~0.1.8",
 		"rxjs": "~6.1.0",

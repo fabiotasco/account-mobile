@@ -10,6 +10,7 @@
     "@angular/router": true,
     "nativescript-angular": true,
     "nativescript-permissions": true,
+    "nativescript-telephony": true,
     "nativescript-theme-core": true,
     "reflect-metadata": true,
     "rxjs": true,

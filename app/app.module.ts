@@ -5,7 +5,6 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 import { AppRoutingModule, navigatableComponents } from "~/app.routing";
 import { AppComponent } from "~/app.component";
-import { AndroidPermissionService } from "~/mobile/services/android-permission.service";
 
 @NgModule({
 	bootstrap: [
@@ -22,7 +21,6 @@ import { AndroidPermissionService } from "~/mobile/services/android-permission.s
 		...navigatableComponents
 	],
 	providers: [
-		AndroidPermissionService
 	],
 	schemas: [
 		NO_ERRORS_SCHEMA

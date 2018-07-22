@@ -188,14 +188,6 @@
 		<data>
 		8v64GAYLETLkGNS4e6B+uL5fXhk=
 		</data>
-		<key>app/android-permission.service.js</key>
-		<data>
-		NUYHVK1az2FItegNdJssQ19xIoE=
-		</data>
-		<key>app/android-permission.service.ts</key>
-		<data>
-		OTEyxy8X1vaGW5HlQ1F2PdJ1X/I=
-		</data>
 		<key>app/app.component.html</key>
 		<data>
 		YRMl+Squh0Ew00p2Icu9PqvUiqw=
@@ -210,7 +202,7 @@
 		</data>
 		<key>app/app.module.js</key>
 		<data>
-		pW7txZclnMKigo9dMmlo9bfRDWM=
+		3iU8h8Xot45dnFc4BAMKPoaXx1I=
 		</data>
 		<key>app/app.module.ngfactory.d.ts</key>
 		<data>
@@ -218,7 +210,7 @@
 		</data>
 		<key>app/app.module.ts</key>
 		<data>
-		f/uqD1z4I8MWBDvOVbb2pGx7b6k=
+		UN19Or9ysTMLRZoLZEtXh1Dftbw=
 		</data>
 		<key>app/app.routing.js</key>
 		<data>
@@ -230,19 +222,35 @@
 		</data>
 		<key>app/main.aot.js</key>
 		<data>
-		HlxbcQXpotfLv2QX1VwXx7VMYuQ=
+		9Nvqt5TDTEH/f/nmApHfTjES9qk=
 		</data>
 		<key>app/main.aot.ts</key>
 		<data>
-		9xRdPuS5KkujiQdMXAMsmD444/E=
+		0O2O5v6XxDNjXT/pLCKwmVVIR2I=
 		</data>
 		<key>app/main.js</key>
 		<data>
-		3VMZQshEtTfyXpctO6rAqOShWp8=
+		oqBoB+w0kselvN2UeC3NsfVpTJk=
 		</data>
 		<key>app/main.ts</key>
 		<data>
-		zjvCRNLIAH1MUg+cd+JshDM0HUM=
+		BE6WzNDQW1hYNiTaTjqpy35U1QQ=
+		</data>
+		<key>app/mobile/callbacks/android-permission.callback.js</key>
+		<data>
+		TXzQSU5t5IU2gJ2xtmPWdKQSIT8=
+		</data>
+		<key>app/mobile/callbacks/android-permission.callback.ts</key>
+		<data>
+		iCrKxoaSQtvEXUOk4Tpbc5NKcTY=
+		</data>
+		<key>app/mobile/callbacks/read-sim-card-data-callback.js</key>
+		<data>
+		I3UbhpjpCBrWVu6FvLH1rRpENBk=
+		</data>
+		<key>app/mobile/callbacks/read-sim-card-data-callback.ts</key>
+		<data>
+		IBfpw50jccRFS3+PLSMfzecduVM=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.css</key>
 		<data>
@@ -250,11 +258,11 @@
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.html</key>
 		<data>
-		OzN3V3NWfANANRlRgorJ2ybPg9E=
+		DimimGl+YI3yTV0A+xIapek7z2A=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.js</key>
 		<data>
-		bET7nXF0M6laBOcrCTjDe6hR65E=
+		u808+GqwNpv600rkW3hYBT1gPBM=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.scss</key>
 		<data>
@@ -262,7 +270,23 @@
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.ts</key>
 		<data>
-		XQPgdWycFc4WKtgbNIwOUj12Ie8=
+		fMDcaE94WN0QlB511K+VK6n2K6I=
+		</data>
+		<key>app/mobile/services/android-permission.service.js</key>
+		<data>
+		jI3BHOZHn6GQXOnvwyNVY9n0hkQ=
+		</data>
+		<key>app/mobile/services/android-permission.service.ts</key>
+		<data>
+		03kSr1U7BELDGFWVxPkgU4EZT34=
+		</data>
+		<key>app/mobile/services/read-sim-card-data.service.js</key>
+		<data>
+		WIzx6o6wGdC79mjN0tDEUaLiNlw=
+		</data>
+		<key>app/mobile/services/read-sim-card-data.service.ts</key>
+		<data>
+		pQ9j7q0CgQkCon3mJsNm4N4SgCg=
 		</data>
 		<key>app/package.json</key>
 		<data>
@@ -17960,6 +17984,38 @@
 		<data>
 		jJ6pD624dsp+RevcpPa3Ar6JLHI=
 		</data>
+		<key>app/tns_modules/nativescript-telephony/.npmignore</key>
+		<data>
+		KqTJ1STshUYIe69nXzb+mHwGfw8=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/LICENSE</key>
+		<data>
+		15ncZ9etzgmiuBDwKF45j0VWYnU=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/README.md</key>
+		<data>
+		TjHjra6GCOAqRYhbRU5u80JG+kU=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/index.d.ts</key>
+		<data>
+		QizN97q1ojzdvzGy8UmWf+JFEw0=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/package.json</key>
+		<data>
+		EZYO3sbjn+piKIqZsiL+Q+o10OY=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/telephony.d.ts</key>
+		<data>
+		zOO5vupVdTeT5MWfv4kV79Vhv74=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/telephony.js</key>
+		<data>
+		ILNUna+2gohGs0tm5EYCJGjT2BQ=
+		</data>
+		<key>app/tns_modules/nativescript-telephony/tsconfig.json</key>
+		<data>
+		3asIPfbHUd/mSQDCXaIgYL3iUvU=
+		</data>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>
 		<data>
 		SxyQh8WMJmydecZFBpcKcuXsv2o=
@@ -34612,28 +34668,6 @@
 			CQo3/43vG3m33U0sjpquwrgREHSwqNiW7FhSv7DXgVU=
 			</data>
 		</dict>
-		<key>app/android-permission.service.js</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NUYHVK1az2FItegNdJssQ19xIoE=
-			</data>
-			<key>hash2</key>
-			<data>
-			dhr8NTZcWgp3Q6Wzzi70v3FdUwGPo3HSt7Q9vikmSpA=
-			</data>
-		</dict>
-		<key>app/android-permission.service.ts</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OTEyxy8X1vaGW5HlQ1F2PdJ1X/I=
-			</data>
-			<key>hash2</key>
-			<data>
-			g4OOy08Rywqvpv6rh0H+n6xF+tI5s2BkqsFrinwYdBI=
-			</data>
-		</dict>
 		<key>app/app.component.html</key>
 		<dict>
 			<key>hash</key>
@@ -34671,11 +34705,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pW7txZclnMKigo9dMmlo9bfRDWM=
+			3iU8h8Xot45dnFc4BAMKPoaXx1I=
 			</data>
 			<key>hash2</key>
 			<data>
-			WCXS6Uh4cWLMM2eRPDng7NkrGNTVXfwvziIoZrcP2yk=
+			QUJym5DXF/TFTrEaJz7G559h8lny9eSZbE2PXcYe++Q=
 			</data>
 		</dict>
 		<key>app/app.module.ngfactory.d.ts</key>
@@ -34693,11 +34727,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			f/uqD1z4I8MWBDvOVbb2pGx7b6k=
+			UN19Or9ysTMLRZoLZEtXh1Dftbw=
 			</data>
 			<key>hash2</key>
 			<data>
-			3M5hP69ttEhw5q7ymIhReCBenX9yPyMDdpOtU/MOBa4=
+			oj7z1VuRxP+i6uEJMKw4nJgSOiw88YcsX8jdxnzNFQM=
 			</data>
 		</dict>
 		<key>app/app.routing.js</key>
@@ -34726,44 +34760,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HlxbcQXpotfLv2QX1VwXx7VMYuQ=
+			9Nvqt5TDTEH/f/nmApHfTjES9qk=
 			</data>
 			<key>hash2</key>
 			<data>
-			rAPyEni4SHWp6O9PhEMUjOp+JhtJLlZqf+DE4dkdtqY=
+			2m5czkOu144rIh3GoAEWS0fLpTfJR6WlYLBvhKYIZbU=
 			</data>
 		</dict>
 		<key>app/main.aot.ts</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9xRdPuS5KkujiQdMXAMsmD444/E=
+			0O2O5v6XxDNjXT/pLCKwmVVIR2I=
 			</data>
 			<key>hash2</key>
 			<data>
-			gnTCu3OuDHI86blsO/35ZlKdK6EZmR+RiLX4UXv7s5A=
+			FlqYI5pUgJMPDPfTYnGHjKC3/hTmj5XAg69LQYH7ZBs=
 			</data>
 		</dict>
 		<key>app/main.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3VMZQshEtTfyXpctO6rAqOShWp8=
+			oqBoB+w0kselvN2UeC3NsfVpTJk=
 			</data>
 			<key>hash2</key>
 			<data>
-			mK6I3bqWncCUZ1KGbukt/F112DHmKudNnpTbnYi2mhI=
+			0lafqVbfLg0wvpTq/YVjayHI+q+WHWUuAEZ5BfG3M+c=
 			</data>
 		</dict>
 		<key>app/main.ts</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zjvCRNLIAH1MUg+cd+JshDM0HUM=
+			BE6WzNDQW1hYNiTaTjqpy35U1QQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			a6NN4VpoK+F8oeHoKVsMHJ92Hwy4KUhZ+EfybXAMJP0=
+			Ri5WZT9yrCz4wNcbjsBh8Roew1Ep5BUUbsP82jedhSk=
+			</data>
+		</dict>
+		<key>app/mobile/callbacks/android-permission.callback.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TXzQSU5t5IU2gJ2xtmPWdKQSIT8=
+			</data>
+			<key>hash2</key>
+			<data>
+			2fop935/snX3YKw5iTXRCHHgc6MD1OoRIWbTQMbRlcY=
+			</data>
+		</dict>
+		<key>app/mobile/callbacks/android-permission.callback.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			iCrKxoaSQtvEXUOk4Tpbc5NKcTY=
+			</data>
+			<key>hash2</key>
+			<data>
+			VRh5wepxVFXPuFSOF/29BwrFAr7tylPhhDTN7t+PV9E=
+			</data>
+		</dict>
+		<key>app/mobile/callbacks/read-sim-card-data-callback.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			I3UbhpjpCBrWVu6FvLH1rRpENBk=
+			</data>
+			<key>hash2</key>
+			<data>
+			5eiJ1zKr7XLxwMmNbCdPJAEiMjwu+uaBJ6IaLhqjnZo=
+			</data>
+		</dict>
+		<key>app/mobile/callbacks/read-sim-card-data-callback.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IBfpw50jccRFS3+PLSMfzecduVM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ovYsWgnp33ymqPb/2INbJwn2L9CqwtobZn3k9rSQh8Y=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.css</key>
@@ -34781,22 +34859,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OzN3V3NWfANANRlRgorJ2ybPg9E=
+			DimimGl+YI3yTV0A+xIapek7z2A=
 			</data>
 			<key>hash2</key>
 			<data>
-			R+F+KtLvwlfpO/okyMbBuGmaqk71MpAyitFzLCVTVAA=
+			LiUC0w9tI39Oy7oNgJXvywqWpsQ61pFUnP1c2WryBtg=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bET7nXF0M6laBOcrCTjDe6hR65E=
+			u808+GqwNpv600rkW3hYBT1gPBM=
 			</data>
 			<key>hash2</key>
 			<data>
-			jDlZOgdGmpoRsdpjdJUDigXJJAd4tiL9TH4kaXibbI8=
+			dxhoLRkLm2T8M807SRphElLcpHne2No6BSswFHVsy28=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.scss</key>
@@ -34814,11 +34892,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XQPgdWycFc4WKtgbNIwOUj12Ie8=
+			fMDcaE94WN0QlB511K+VK6n2K6I=
 			</data>
 			<key>hash2</key>
 			<data>
-			dYjMd7j9hylaAl6fPWJIapKcnAM+uNtPGcZOLZ2nyXU=
+			hBioOCmB6n3uhdpIOaDtsLqFrZS/kZF7DjlM2Uja0tE=
+			</data>
+		</dict>
+		<key>app/mobile/services/android-permission.service.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jI3BHOZHn6GQXOnvwyNVY9n0hkQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			ePlJR9QmwL/x9ZtSPG3oZlFndPHWijxHrFtfPiLGEoE=
+			</data>
+		</dict>
+		<key>app/mobile/services/android-permission.service.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			03kSr1U7BELDGFWVxPkgU4EZT34=
+			</data>
+			<key>hash2</key>
+			<data>
+			WxEmnVFh7R8DItktwFfV5hJVqr0BIwLaWwN3ZCPkedo=
+			</data>
+		</dict>
+		<key>app/mobile/services/read-sim-card-data.service.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WIzx6o6wGdC79mjN0tDEUaLiNlw=
+			</data>
+			<key>hash2</key>
+			<data>
+			neW95frch/Rpn8/yXtB5fxoK3lWWISUFmdFXoCJueCI=
+			</data>
+		</dict>
+		<key>app/mobile/services/read-sim-card-data.service.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pQ9j7q0CgQkCon3mJsNm4N4SgCg=
+			</data>
+			<key>hash2</key>
+			<data>
+			DyuYxUEVmYCQhOqTBRDqXgCcKoBcX5ZkE3HOELIoJSc=
 			</data>
 		</dict>
 		<key>app/package.json</key>
@@ -83483,6 +83605,94 @@
 			<key>hash2</key>
 			<data>
 			91hyhH2G5KOTZmtW12abkLLuIRhAUp0nV3AVqvA6M60=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/.npmignore</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KqTJ1STshUYIe69nXzb+mHwGfw8=
+			</data>
+			<key>hash2</key>
+			<data>
+			UGPncTeKtgZG1/228cVTUjaFipvHxMndWYo9hawJOyE=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/LICENSE</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			15ncZ9etzgmiuBDwKF45j0VWYnU=
+			</data>
+			<key>hash2</key>
+			<data>
+			VkYL7k9+AuM7ECwPNCvJ/uNWTWk7xg8Wm0oi/tNzMHI=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/README.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TjHjra6GCOAqRYhbRU5u80JG+kU=
+			</data>
+			<key>hash2</key>
+			<data>
+			btseXzb+NGD6RTXsuc9W3Rkg05s9IGVk5l1za6og7O4=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/index.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QizN97q1ojzdvzGy8UmWf+JFEw0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Qk6f4Fh9llu5nCxtUKyd+vSnr8Oomp7mKODZ+viis/A=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/package.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EZYO3sbjn+piKIqZsiL+Q+o10OY=
+			</data>
+			<key>hash2</key>
+			<data>
+			5oxMhh+s28Dqvj1Ghm89VPx8DUQnBX0W9dLaH38qxMs=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/telephony.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zOO5vupVdTeT5MWfv4kV79Vhv74=
+			</data>
+			<key>hash2</key>
+			<data>
+			nHrVCCdGgmMREPlohSyEwFLrXPJ6UdcUI0QvaAP+1IU=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/telephony.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ILNUna+2gohGs0tm5EYCJGjT2BQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			wYVLAC+5woUOLNPsANU7cXfXBFDw5KKd+Bd/HLv8hJQ=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-telephony/tsconfig.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3asIPfbHUd/mSQDCXaIgYL3iUvU=
+			</data>
+			<key>hash2</key>
+			<data>
+			cneCyrID85QWo1llA5NxqGI9yd5LFUfuBQyM6es72sY=
 			</data>
 		</dict>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>
