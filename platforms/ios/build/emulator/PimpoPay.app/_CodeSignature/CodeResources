@@ -184,6 +184,18 @@
 		<data>
 		jIhkrY2ZO/AE5l174b83FdMjO8E=
 		</data>
+		<key>app/_app-common.scss</key>
+		<data>
+		8v64GAYLETLkGNS4e6B+uL5fXhk=
+		</data>
+		<key>app/android-permission.service.js</key>
+		<data>
+		NUYHVK1az2FItegNdJssQ19xIoE=
+		</data>
+		<key>app/android-permission.service.ts</key>
+		<data>
+		OTEyxy8X1vaGW5HlQ1F2PdJ1X/I=
+		</data>
 		<key>app/app.component.html</key>
 		<data>
 		YRMl+Squh0Ew00p2Icu9PqvUiqw=
@@ -216,10 +228,6 @@
 		<data>
 		GssZcG/gR3bzXUm9H6C8ViStbek=
 		</data>
-		<key>app/app.scss</key>
-		<data>
-		vO2VaCNz9CNHXme9fN4URL6m9PQ=
-		</data>
 		<key>app/main.aot.js</key>
 		<data>
 		HlxbcQXpotfLv2QX1VwXx7VMYuQ=
@@ -236,21 +244,25 @@
 		<data>
 		zjvCRNLIAH1MUg+cd+JshDM0HUM=
 		</data>
+		<key>app/mobile/enrollment/enrollment.component.css</key>
+		<data>
+		gG/fyN4RIZWM4zU6WcQ0wrk7wwk=
+		</data>
 		<key>app/mobile/enrollment/enrollment.component.html</key>
 		<data>
-		PVX3Z3/RsWcUQn7SQHQk4gitg8Y=
+		OzN3V3NWfANANRlRgorJ2ybPg9E=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.js</key>
 		<data>
-		/QTAVW7izLBmCPJNqa9KBRkOopQ=
+		bET7nXF0M6laBOcrCTjDe6hR65E=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.scss</key>
 		<data>
-		7FmEn6wmRb09pJvfASbVxv272uM=
+		9EUDRAHPgtIE4UOVPlTNHUl8oP4=
 		</data>
 		<key>app/mobile/enrollment/enrollment.component.ts</key>
 		<data>
-		JhmQCKwrrGvqwq+yBZuVOQ7akoo=
+		XQPgdWycFc4WKtgbNIwOUj12Ie8=
 		</data>
 		<key>app/package.json</key>
 		<data>
@@ -258,11 +270,11 @@
 		</data>
 		<key>app/platform.css</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		iizWc/3EP9rPUP8W0F4SilL2S08=
 		</data>
 		<key>app/platform.scss</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		yidJHBFYn8rzIDOH6qgscbwPw3Y=
 		</data>
 		<key>app/tns_modules/@angular/animations/README.md</key>
 		<data>
@@ -17928,6 +17940,26 @@
 		<data>
 		fRTNlAdwcxiaO2LXIrusLXdbQvw=
 		</data>
+		<key>app/tns_modules/nativescript-permissions/LICENSE</key>
+		<data>
+		7rkd0q4rYK3SlRUt7yGK7k1g+ZU=
+		</data>
+		<key>app/tns_modules/nativescript-permissions/README.md</key>
+		<data>
+		ZbOnMz41INddJVboLGQshT9o+bw=
+		</data>
+		<key>app/tns_modules/nativescript-permissions/index.d.ts</key>
+		<data>
+		BBKGEQF0x3FYCEoFAE9AsPzeN4M=
+		</data>
+		<key>app/tns_modules/nativescript-permissions/package.json</key>
+		<data>
+		U5Wce790mKYpcsF1o3bnXfVemcs=
+		</data>
+		<key>app/tns_modules/nativescript-permissions/permissions.js</key>
+		<data>
+		jJ6pD624dsp+RevcpPa3Ar6JLHI=
+		</data>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>
 		<data>
 		SxyQh8WMJmydecZFBpcKcuXsv2o=
@@ -34569,6 +34601,39 @@
 			UYnCJGhs89PUPTuK+Wqn3Sj+wmcX8NHwZ3u0XmpMunI=
 			</data>
 		</dict>
+		<key>app/_app-common.scss</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8v64GAYLETLkGNS4e6B+uL5fXhk=
+			</data>
+			<key>hash2</key>
+			<data>
+			CQo3/43vG3m33U0sjpquwrgREHSwqNiW7FhSv7DXgVU=
+			</data>
+		</dict>
+		<key>app/android-permission.service.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NUYHVK1az2FItegNdJssQ19xIoE=
+			</data>
+			<key>hash2</key>
+			<data>
+			dhr8NTZcWgp3Q6Wzzi70v3FdUwGPo3HSt7Q9vikmSpA=
+			</data>
+		</dict>
+		<key>app/android-permission.service.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OTEyxy8X1vaGW5HlQ1F2PdJ1X/I=
+			</data>
+			<key>hash2</key>
+			<data>
+			g4OOy08Rywqvpv6rh0H+n6xF+tI5s2BkqsFrinwYdBI=
+			</data>
+		</dict>
 		<key>app/app.component.html</key>
 		<dict>
 			<key>hash</key>
@@ -34657,17 +34722,6 @@
 			pAlGsI1qOlzbkinmKh2jH3tQQZT+210A4tLjz5iqkps=
 			</data>
 		</dict>
-		<key>app/app.scss</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vO2VaCNz9CNHXme9fN4URL6m9PQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			/LOAwbKV83UY8xH2Fp6VreUWH+gWCmQQID8XwCgHAG8=
-			</data>
-		</dict>
 		<key>app/main.aot.js</key>
 		<dict>
 			<key>hash</key>
@@ -34712,48 +34766,59 @@
 			a6NN4VpoK+F8oeHoKVsMHJ92Hwy4KUhZ+EfybXAMJP0=
 			</data>
 		</dict>
+		<key>app/mobile/enrollment/enrollment.component.css</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gG/fyN4RIZWM4zU6WcQ0wrk7wwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			tpxSoR+ynsC6nysbclxb0nBDMqdK54rS/E27PldeXgQ=
+			</data>
+		</dict>
 		<key>app/mobile/enrollment/enrollment.component.html</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PVX3Z3/RsWcUQn7SQHQk4gitg8Y=
+			OzN3V3NWfANANRlRgorJ2ybPg9E=
 			</data>
 			<key>hash2</key>
 			<data>
-			5JOGHzp0PhNWzwZiZOjxfbe9YkLSzRSPv5lkMG4np4Y=
+			R+F+KtLvwlfpO/okyMbBuGmaqk71MpAyitFzLCVTVAA=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.js</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/QTAVW7izLBmCPJNqa9KBRkOopQ=
+			bET7nXF0M6laBOcrCTjDe6hR65E=
 			</data>
 			<key>hash2</key>
 			<data>
-			SI861PZoGy4mTDhILygskVur8/Zm9VvRGZkMVdLTinM=
+			jDlZOgdGmpoRsdpjdJUDigXJJAd4tiL9TH4kaXibbI8=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.scss</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7FmEn6wmRb09pJvfASbVxv272uM=
+			9EUDRAHPgtIE4UOVPlTNHUl8oP4=
 			</data>
 			<key>hash2</key>
 			<data>
-			TEn/wJEJODknYTmqdK2gaVckadFeK1W3uSSbdtE5w1Q=
+			SeX8mUmBvha3JJmOXLuhGoea2VV1UU3olNZbKvNlow4=
 			</data>
 		</dict>
 		<key>app/mobile/enrollment/enrollment.component.ts</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JhmQCKwrrGvqwq+yBZuVOQ7akoo=
+			XQPgdWycFc4WKtgbNIwOUj12Ie8=
 			</data>
 			<key>hash2</key>
 			<data>
-			8p+NSzHM39qLYKC+GUiI66fY8V9H1P1wyUBhEOgYIO4=
+			dYjMd7j9hylaAl6fPWJIapKcnAM+uNtPGcZOLZ2nyXU=
 			</data>
 		</dict>
 		<key>app/package.json</key>
@@ -34771,22 +34836,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			iizWc/3EP9rPUP8W0F4SilL2S08=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			QXihA4ChlasVg+Jyl4PzFryMWKFK4o3o9vHlAwCB8LM=
 			</data>
 		</dict>
 		<key>app/platform.scss</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			yidJHBFYn8rzIDOH6qgscbwPw3Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			mULcElmu6SVTDlMfL8spPJnpVtFYPDpvr7SgpWybYhA=
 			</data>
 		</dict>
 		<key>app/tns_modules/@angular/animations/README.md</key>
@@ -83363,6 +83428,61 @@
 			<key>hash2</key>
 			<data>
 			zeduk8CJMEtgBIv7RvsI6pJFyIMuJhzIFaHuU70heIQ=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-permissions/LICENSE</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7rkd0q4rYK3SlRUt7yGK7k1g+ZU=
+			</data>
+			<key>hash2</key>
+			<data>
+			R+g/WVCFSYtAOUi/R9EsdMo3J0M/4xEB3zhJuWGF+IM=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-permissions/README.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZbOnMz41INddJVboLGQshT9o+bw=
+			</data>
+			<key>hash2</key>
+			<data>
+			XFiajKOMiZR2eFHRlFZSDv32ngR/mey8EaX+TZMoNuE=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-permissions/index.d.ts</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BBKGEQF0x3FYCEoFAE9AsPzeN4M=
+			</data>
+			<key>hash2</key>
+			<data>
+			sGWRpjVPeVRiBo05HwFIP5xhIgNY6nZksNv4IhplisM=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-permissions/package.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U5Wce790mKYpcsF1o3bnXfVemcs=
+			</data>
+			<key>hash2</key>
+			<data>
+			CYrodXIyBgskgmQhPc5B0bLF31h5FscrQ4uBarz0kuU=
+			</data>
+		</dict>
+		<key>app/tns_modules/nativescript-permissions/permissions.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jJ6pD624dsp+RevcpPa3Ar6JLHI=
+			</data>
+			<key>hash2</key>
+			<data>
+			91hyhH2G5KOTZmtW12abkLLuIRhAUp0nV3AVqvA6M60=
 			</data>
 		</dict>
 		<key>app/tns_modules/nativescript-theme-core/css/aqua.css</key>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { isAndroid } from 'tns-core-modules/platform/platform';
+import { AndroidPermissionService } from '~/mobile/services/android-permission.service';
+import { AndroidPermissionCallback } from '~/mobile/callbacks/android-permission.callback';
+
+declare var android: any;
 
 @Component({
 	moduleId: module.id,
@@ -8,8 +13,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnrollmentComponent implements OnInit {
 
-	constructor() { }
+	private androidPermissionCallback: AndroidPermissionCallback;
 
-	ngOnInit() { }
+	constructor(private androidPermissionService: AndroidPermissionService) { }
+
+	ngOnInit() {
+		if (isAndroid) {
+			this.androidPermissionService.requestPermission(android.Manifest.permission.READ_PHONE_STATE, this.androidPermissionCallback = {
+				onComplete(hasPermission) {
+					console.log("Permission granted? " + hasPermission);
+				}
+			});
+		}
+	}
 
 }

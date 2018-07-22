@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 	moduleId: module.id,
 	selector: 'app-enrollment',
 	templateUrl: './enrollment.component.html',
-	styleUrls: ['./enrollment.component.scss']
+	styleUrls: ['./enrollment.component.css']
 })
 export class EnrollmentComponent implements OnInit {
 
