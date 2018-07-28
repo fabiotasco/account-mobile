@@ -3,6 +3,8 @@ import { isAndroid } from 'tns-core-modules/platform/platform';
 import * as Permissions from 'nativescript-permissions';
 import { Telephony } from 'nativescript-telephony';
 import { SimCardData } from '~/canonicals/sim-card-data';
+import { EnrollService } from '~/services/enroll.service';
+import { Page } from "ui/page";
 
 declare var android: any;
 
@@ -14,9 +16,10 @@ declare var android: any;
 })
 export class EnrollmentComponent implements OnInit {
 
-	constructor() { }
+	constructor(private page: Page, private enrollService: EnrollService) { }
 
 	ngOnInit() {
+		this.page.actionBarHidden = true;
 		this.getReadSimCardDataPermission();
 	}
 
@@ -44,7 +47,7 @@ export class EnrollmentComponent implements OnInit {
 	}
 
 	private readSimCardData(): void {
-		Telephony().then(function (result) {
+		Telephony().then((result) => {
 			var json = JSON.stringify(result);
 			console.log("SIM Card data resolved: " + json);
 
@@ -52,12 +55,28 @@ export class EnrollmentComponent implements OnInit {
 			if (simCardData.phoneNumber == null) {
 				// TODO: requestPhoneNumber();
 			} else {
-				// TODO: Verifica a conta na API!
+				this.enrollService.enroll(simCardData)
+					.subscribe((result) => {
+						console.log("Phone enrolled: " + JSON.stringify(result));
+						// TODO: login()
+					}, (error) => {
+						console.log(JSON.stringify(error));
+						// TODO: requestPhoneNumber();
+					});
 			}
-		}).catch(function (error) {
+		}).catch((error) => {
 			console.error("SIM Card data access threw an error: " + error)
 			// TODO: requestPhoneNumber();
 		})
+	}
+
+	private onGetDataSuccess(res) {
+	}
+
+	private onGetDataError(error: Response | any) {
+		const body = error.json() || "";
+		const err = body.error || JSON.stringify(body);
+		console.log("onGetDataError: " + err);
 	}
 
 }

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { isAndroid } from 'tns-core-modules/platform/platform';
-import { AndroidPermissionService } from '~/mobile/services/android-permission.service';
-import { AndroidPermissionCallback } from '~/mobile/callbacks/android-permission.callback';
-import { ReadSimCardDataService } from '~/mobile/services/read-sim-card-data.service';
-import { ReadSimCardDataCallback } from '~/mobile/callbacks/read-sim-card-data-callback';
-import { hasPermission } from 'nativescript-permissions';
 import * as Permissions from 'nativescript-permissions';
 import { Telephony } from 'nativescript-telephony';
+import { SimCardData } from '~/canonicals/sim-card-data';
+import { EnrollService } from '~/services/enroll.service';
+import { Page } from "ui/page";
 
 declare var android: any;
 
@@ -18,9 +16,10 @@ declare var android: any;
 })
 export class EnrollmentComponent implements OnInit {
 
-	constructor() { }
+	constructor(private page: Page, private enrollService: EnrollService) { }
 
 	ngOnInit() {
+		this.page.actionBarHidden = true;
 		this.getReadSimCardDataPermission();
 	}
 
@@ -38,7 +37,7 @@ export class EnrollmentComponent implements OnInit {
 						// TODO: requestPhoneNumber();
 					});
 			} else {
-				// Se Android permitiu, faz a leitura.
+				// Se app já possui a permissão, faz a leitura.
 				this.readSimCardData();
 			}
 		} else {
@@ -48,13 +47,36 @@ export class EnrollmentComponent implements OnInit {
 	}
 
 	private readSimCardData(): void {
-		Telephony().then(function (resolved) {
-			console.log("SIM Card data access resolved!");
-			console.log(JSON.stringify(resolved));
-		}).catch(function (error) {
+		Telephony().then((result) => {
+			var json = JSON.stringify(result);
+			console.log("SIM Card data resolved: " + json);
+
+			let simCardData = Object.assign(new SimCardData(), JSON.parse(json));
+			if (simCardData.phoneNumber == null) {
+				// TODO: requestPhoneNumber();
+			} else {
+				this.enrollService.enroll(simCardData)
+					.subscribe((result) => {
+						console.log("Phone enrolled: " + JSON.stringify(result));
+						// TODO: login()
+					}, (error) => {
+						console.log(JSON.stringify(error));
+						// TODO: requestPhoneNumber();
+					});
+			}
+		}).catch((error) => {
 			console.error("SIM Card data access threw an error: " + error)
 			// TODO: requestPhoneNumber();
 		})
+	}
+
+	private onGetDataSuccess(res) {
+	}
+
+	private onGetDataError(error: Response | any) {
+		const body = error.json() || "";
+		const err = body.error || JSON.stringify(body);
+		console.log("onGetDataError: " + err);
 	}
 
 }
