@@ -1,0 +1,40 @@
+@import '../../../app-common';
+
+.buy-bg {
+  background-color: $primary;
+}
+
+.form-label {
+  font-size: 18;
+  color: #333;
+  margin-bottom: 10;
+}
+.text-field {
+  width: 70%;
+  height: 50;
+  border-bottom-width: 1;
+  border-color: $primary-dark;
+}
+
+.field-value {
+  border-width: 0;
+  font-size: 28;
+  width: 70%;
+  background-color: rgba($color: $primary, $alpha: 0.085);
+  height: 20;
+  padding: 0;
+  color: $primary-dark;
+}
+
+.value-container {
+}
+
+.label-value {
+  margin: -1;
+  font-size: 28;
+  background-color: $primary;
+  color: $on-primary;
+  border-top-left-radius: 5;
+  border-bottom-left-radius: 5;
+  padding: 5 10;
+}

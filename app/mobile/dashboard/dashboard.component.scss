@@ -1,0 +1,48 @@
+@import '../../app-common';
+
+ListView {
+  separator-color: transparent;
+}
+
+.body {
+  color: #313131;
+}
+
+.part-saldo {
+  background: linear-gradient(to bottom, $primary, $primary-light);
+  border-bottom-right-radius: 2;
+}
+
+.part-saldo-right {
+  background: linear-gradient(to bottom, $primary, $primary-light);
+  border-bottom-left-radius: 2;
+}
+
+.tab-group {
+  background: linear-gradient(to top, $primary, $primary-light);
+}
+.btn-tab-group {
+  margin-top: 10;
+}
+
+.btn-tab {
+  border-width: 1;
+  border-color: $primary;
+}
+
+.btn-tab-text {
+  color: $on-secondary;
+  font-size: 12;
+}
+
+.list-group-item-heading {
+  color: #313131;
+}
+
+.list-group-item-body {
+  color: $primary;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}

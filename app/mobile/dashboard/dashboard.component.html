@@ -1,0 +1,87 @@
+<GridLayout>
+  <ActionBar class="action-bar">
+    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+      <Label text="PimpoPay" class="action-title"></Label>
+    </StackLayout>
+  </ActionBar>
+
+  <StackLayout class="m-t-5">
+    <GridLayout rows="*, 60">
+      <StackLayout row="0" height="100%">
+        <GridLayout rows="100,*" columns="150,*" class=" m-x-5">
+          <StackLayout row="0" col="0" class="part-saldo">
+            <Label text="Meu Saldo" class="h2 p-x-20 p-y-10 text-center text-for-primary" textWrap="true"></Label>
+            <Label [text]="account.balance | currency:'BRL':'symbol'" class="h3 p-x-20 text-center text-for-primary" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout row="0" col="1" class=" m-l-5 part-saldo-right">
+            <Label text="Resumo" class="h2 p-l-5 text-for-primary" textWrap="true"></Label>
+            <GridLayout rows="*, *, *" class="p-5" columns="100, 100">
+              <Label text="Transferiu: " row="0" col="0" class="text-for-primary" textWrap="true"></Label>
+              <Label text="R$ 1.349,00" row="0" col="1" class="text-for-primary" textWrap="true"></Label>
+              <Label text="Creditou: " row="1" col="0" class="text-for-primary" textWrap="true"></Label>
+              <Label text="R$ 1.349,00" row="1" col="1" class="text-for-primary" textWrap="true"></Label>
+              <Label text="Gastou: " row="2" col="0" class="text-for-primary" textWrap="true"></Label>
+              <Label text="R$ 1.349,00" row="2" col="1" class="text-for-primary" textWrap="true"></Label>
+            </GridLayout>
+          </StackLayout>
+
+          <StackLayout row="1" col="0" colSpan="2">
+            <StackLayout>
+              <Label text="Ultimos 7 dias" class="font-weight-bold h3 m-x-20 m-t-10" textWrap="true"></Label>
+              <StackLayout class="hr-light m-10"></StackLayout>
+              <ListView [items]="account.transactions" (itemTap)="onItemTap($event)" class="list-group">
+                <ng-template let-item="item" let-odd="odd" let-even="even">
+                  <GridLayout rows="*,*,*" columns="20, *, 100" class="list-group-item">
+                    <StackLayout height="40" width="3" class="bg-primary" row="0" col="0" rowSpan="3"></StackLayout>
+
+                    <Label [text]="getTransactionType(item.type)" class="h3 list-group-item-heading" row="0" col="1" rowSpan="2"></Label>
+                    <Label [text]="item.createdAt" class="list-group-item-body body" row="1" col="1" rowSpan="2"></Label>
+
+                    <Label [text]="item.amount | currency:'BRL':'symbol'" class="h3 list-group-item-heading" row="0" col="2" rowSpan="3"></Label>
+
+
+                  </GridLayout>
+                </ng-template>
+              </ListView>
+
+              <StackLayout *ngIf="account.transactions.length == 0" class="m-t-20">
+                <Label text="Nenhuma transação no período." class="text-center" textWrap="true"></Label>
+              </StackLayout>
+
+            </StackLayout>
+          </StackLayout>
+        </GridLayout>
+      </StackLayout>
+
+      <StackLayout row="1" class="tab-group">
+        <FlexboxLayout flexDirection="row" alignItems="center" justifyContent="center" class="btn-tab-group">
+          <StackLayout class="btn-tab" width="20%" class="text-center" (tap)="goToBuyScreen()">
+            <Image src="res://buy" height="24" width="24"></Image>
+            <Label text="Comprar" class="btn-tab-text" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout class="btn-tab" width="20%" class="text-center">
+            <Image src="res://credit" height="24" width="24"></Image>
+            <Label text="Creditar" class="btn-tab-text" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout class="btn-tab" width="20%" class="text-center">
+            <Image src="res://resume" height="24" width="24"></Image>
+            <Label text="Extrato" class="btn-tab-text" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout class="btn-tab" width="20%" class="text-center">
+            <Image src="res://transfer" height="24" width="24"></Image>
+            <Label text="Transferir" class="btn-tab-text" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout class="btn-tab" width="20%" class="text-center">
+            <Image src="res://account" height="24" width="24"></Image>
+            <Label text="Minha Conta" class="btn-tab-text" textWrap="true"></Label>
+          </StackLayout>
+        </FlexboxLayout>
+      </StackLayout>
+    </GridLayout>
+  </StackLayout>
+</GridLayout>

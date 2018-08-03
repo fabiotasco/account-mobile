@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.PimpoPay"  
+    applicationId = "br.com.fabiotasco.PimpoPay"  
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
