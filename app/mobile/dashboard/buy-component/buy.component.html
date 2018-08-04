@@ -1,0 +1,41 @@
+<GridLayout class="background">
+  <ActionBar class="action-bar">
+    <NavigationButton text="Back" (tap)="back()" android.systemIcon="ic_ab_back_material_dark"></NavigationButton>
+    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+      <Label text="PimpoPay (Realizar compra)" class="action-title"></Label>
+    </StackLayout>
+  </ActionBar>
+
+  <StackLayout>
+
+    <FlexboxLayout flexDirection="column" [formGroup]="buyForm" justifyContent="space-around" shadow="6" class="part-form-buy m-15" alignItems="center" height="90%">
+
+      <!--       <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center" class="m-t-5">
+        <Label class="form-label" text="Telefone da Loja:" textWrap="true"></Label>
+        <TextField name="establishmentNumber" maxLength="19" (textChange)="phoneMaxSize($event)" (blur)="formatPhoneNumber($event)" keyboardType="phone" hint="Ex: 55 11 99999 9999"
+          class="text-field text-center" [text]="formatedPhone"></TextField>
+        <Label text="Informe apenas nṹmeros" class="body" fontSize="14" textWrap="true"></Label>
+      </FlexboxLayout> -->
+
+      <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center">
+        <Label class="form-label" text="Valor do Produto" textWrap="true"></Label>
+
+        <FlexboxLayout class="value-container text-center" justifyContent="center">
+          <Label text="R$" class="label-value m-t-5" textWrap="true"></Label>
+          <TextField id="productValue" name="productValue" formControlName="productValue" keyboardType="phone" hint="0,00" class="text-field text-center field-value"
+            text="">
+          </TextField>
+
+        </FlexboxLayout>
+
+      </FlexboxLayout>
+
+      <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center" height="100">
+        <Button (tap)="register()" text="Registrar Compra" [isEnabled]="buyForm.valid" width="200" class="btn btn-primary" borderRadius="5"></Button>
+      </FlexboxLayout>
+
+    </FlexboxLayout>
+
+  </StackLayout>
+
+</GridLayout>

@@ -1,0 +1,21 @@
+<GridLayout>
+  <StackLayout>
+    <GridLayout rows="60,30,30,30,30,100" columns="*, 160">
+      <Label text="Transação realizada com sucesso" class="text-center m-15 p-t-5 bg-primary" row="0" col="0" colSpan="2"></Label>
+
+      <Label text="Transação: " row="1" col="0" class="h3 m-l-15"></Label>
+      <Label [text]="getTransactionType(transaction.type)" row="1" col="1" class=" m-l-15"></Label>
+      <Label text="Comprovante: " row="2" col="0" class="h3 m-l-15"></Label>
+      <Label [text]="transaction.id" row="2" col="1" class=" m-l-15"></Label>
+      <Label text="Data: " class="h3 m-l-15" row="3" col="0"></Label>
+      <Label [text]="transaction.createdAt" class=" m-l-15" row="3" col="1"></Label>
+      <Label text="Valor: " row="4" col="0" class="h3 m-l-15"></Label>
+      <Label [text]="transaction.amount | currency:'BRL':'symbol'" row="4" col="1" class=" m-l-15"></Label>
+
+      <FlexboxLayout justifyContent="center" row="5" col="0" colSpan="2" alignItems="center" height="90">
+        <Button text="Fechar" (tap)="close()" class="btn btn-primary"></Button>
+        <Button text="Compartilhar" (tap)="close()" class="btn btn-secondary"></Button>
+      </FlexboxLayout>
+    </GridLayout>
+  </StackLayout>
+</GridLayout>

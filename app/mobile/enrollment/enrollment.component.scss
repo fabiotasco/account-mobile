@@ -1,5 +1,10 @@
 @import '../../app-common';
 
-.background {
-	background-color: $secondary;
+.card {
+  background-color: #fff;
+  text-align: center;
+  padding: 16;
+  border-radius: 5;
+  width: 300;
+  height: 250;
 }

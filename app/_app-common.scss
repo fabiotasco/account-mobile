@@ -4,14 +4,14 @@
 @import '~nativescript-theme-core/scss/light';
 
 $primary: #00897b;
-$primary-ligth: #4ebaaa;
+$primary-light: #4ebaaa;
 $primary-dark: #005b4f;
 $on-primary: #ffffff;
 $on-primary-light: #000000;
 $on-primary-dark: #ffffff;
 
 $secondary: #7e57c2;
-$secondary-ligth: #b085f5;
+$secondary-light: #b085f5;
 $secondary-dark: #4d2c91;
 $on-secondary: #ffffff;
 $on-secondary-ligth: #ffffff;
@@ -28,3 +28,63 @@ $btn-color: $primary;
 
 // Import the theme’s main ruleset.
 @import '~nativescript-theme-core/scss/index';
+
+.background {
+  background-color: $primary;
+}
+
+.body {
+  color: #999;
+}
+
+.action-bar {
+  background-color: $primary;
+  color: $on-primary;
+}
+
+.action-title {
+  font-size: 18;
+  vertical-align: middle;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-for-primary {
+  color: $on-primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-danger {
+  color: $error;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(to bottom, $primary, $primary-light);
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}
+.btn-primary {
+  background-color: $primary;
+  color: $on-primary;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $on-secondary;
+}
+
+.btn-danger {
+  background-color: $error;
+  color: $on-error;
+}

@@ -1,6 +1,18 @@
-<StackLayout class="background">
-	<Label text="Pimpo Pay" class="title"></Label>
-	<Label text="Loading" class="subtitle"></Label>
+<GridLayout rows="200,250" class="background">
+  <Image row="0" src="res://logo" class="m-b-20"></Image>
 
-	<Button text="SIM Card" class="btn btn-primary"></Button>
-</StackLayout>
+  <StackLayout row="1" class="card" [formGroup]="enrollForm" *ngIf="permissionDenied">
+    <Label text="Criar uma conta" class="h2 " textWrap="true"></Label>
+    <Label text="É preciso informar o numero de telefone no seguinte formato: DDI+DDD+Telefone" textWrap="true"></Label>
+
+    <GridLayout rows="*" columns="80, *" height="50">
+      <TextField hint="DDI" id="phoneDDI" name="phoneDDI" keyboardType="phone" maxLength="2" returnKeyType="next" (returnPress)="toNextField('phoneNumber')"
+        formControlName="phoneDDI" row="0" col="0"></TextField>
+      <TextField hint="DDD+Telefone" id="phoneNumber" name="phoneNumber" keyboardType="phone" formControlName="phoneNumber" row="0" col="1"></TextField>
+    </GridLayout>
+
+    <Button text="Enviar" class="btn btn-primary" (tap)="sendToEnroll()" [isEnabled]="enrollForm.valid"></Button>
+
+  </StackLayout>
+
+</GridLayout>
