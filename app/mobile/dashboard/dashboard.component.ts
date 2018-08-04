@@ -75,4 +75,24 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  goToTransferScreen(): void {
+    this.router.navigate(['dashboard/transfer'], {
+      transition: {
+        name: 'slide',
+        duration: 150,
+        curve: 'linear'
+      }
+    });
+  }
+
+  goToMyAccountScreen(): void {
+    this.router.navigate(['dashboard/my-account'], {
+      transition: {
+        name: 'slide',
+        duration: 150,
+        curve: 'linear'
+      }
+    });
+  }
 }

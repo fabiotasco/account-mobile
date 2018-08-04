@@ -1,6 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { ReceiptComponent } from './receipt/receipt.component';
+import { ReceiptComponent } from '~/shared/receipt/receipt.component';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 
 @NgModule({
