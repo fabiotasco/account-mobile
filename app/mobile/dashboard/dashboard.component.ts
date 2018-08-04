@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router: RouterExtensions, private enrollService: EnrollService) {}
 
   ngOnInit() {
+    console.log('NgOnInit');
     this.account = new Account();
 
     const simData = JSON.parse(getString(simDataSession, ''));
@@ -46,6 +47,21 @@ export class DashboardComponent implements OnInit {
   }
 
   goToBuyScreen(): void {
-    this.router.navigate(['dashboard/buy']);
+    this.router.navigate(['dashboard/buy'], {
+      transition: {
+        name: 'slide',
+        duration: 150,
+        curve: 'linear'
+      }
+    });
+  }
+  goToCreditScreen(): void {
+    this.router.navigate(['dashboard/credit'], {
+      transition: {
+        name: 'slide',
+        duration: 150,
+        curve: 'linear'
+      }
+    });
   }
 }

@@ -2,20 +2,15 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { AndroidData } from 'nativescript-ng-shadow';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import * as toast from 'nativescript-toast';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field/text-field';
 import { TransactionService } from '~/services/transaction.service';
-import { Buy, Transaction } from '~/models/transaction';
-import { getString } from 'tns-core-modules/application-settings/application-settings';
-import { userSession, simDataSession } from '~/canonicals/constants';
-import { Account } from '~/models/account';
+import { TransactionData, Transaction } from '~/models/transaction';
 import { EnrollService } from '~/services/enroll.service';
-import { SimCardData } from '~/canonicals/sim-card-data';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/directives/dialogs';
-import { ReceiptComponent } from '~/shared/receipt/receipt.component';
 import { HttpErrorResponse } from '@angular/common/http';
-import * as dialogs from 'ui/dialogs';
+
+import { BaseComponent } from '~/mobile/base.component';
 
 @Component({
   moduleId: module.id,
@@ -23,24 +18,25 @@ import * as dialogs from 'ui/dialogs';
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.css']
 })
-export class BuyComponent implements OnInit {
-  userLogged: Account;
+export class BuyComponent extends BaseComponent implements OnInit {
   formShadow: AndroidData;
   buyForm: FormGroup;
   formatedPhone: string;
 
   constructor(
     private fb: FormBuilder,
-    private router: RouterExtensions,
+    protected router: RouterExtensions,
     private page: Page,
     private transactionService: TransactionService,
     private enrollService: EnrollService,
-    private modalService: ModalDialogService,
-    private vcRef: ViewContainerRef
-  ) {}
+    protected modalService: ModalDialogService,
+    protected vcRef: ViewContainerRef
+  ) {
+    super(modalService, vcRef, router);
+  }
 
   ngOnInit() {
-    this.userLogged = JSON.parse(getString(userSession, ''));
+    super.ngOnInit();
     this.formatedPhone = '';
     this.formShadow = {
       bgcolor: '#00897b',
@@ -57,7 +53,7 @@ export class BuyComponent implements OnInit {
   register(): void {
     const productValue = parseFloat(this.buyForm.get('productValue').value).toFixed(2);
 
-    const buyObj: Buy = {
+    const buyObj: TransactionData = {
       pan: this.userLogged.pan,
       amount: parseFloat(productValue)
       /*  establishmentNumber: this.buyForm.get('establishmentNumber').value */
@@ -65,7 +61,7 @@ export class BuyComponent implements OnInit {
 
     this.transactionService.registerBuy(buyObj).subscribe(
       res => {
-        toast.makeText('Compra realizada com sucesso', '3000').show();
+        this.toastHelper.makeText('Compra realizada com sucesso', '3000').show();
         this.buyForm.reset();
         this.callModalReceipt(res.content);
       },
@@ -73,17 +69,13 @@ export class BuyComponent implements OnInit {
         const err = fail.error;
         const error = err.errors[0];
 
-        dialogs.alert({
+        this.dialogsHelper.alert({
           title: 'Códido: ' + error.code,
           message: error.message,
           okButtonText: 'Ok'
         });
       }
     );
-  }
-
-  back(): void {
-    this.router.navigate(['dashboard'], { clearHistory: true });
   }
 
   phoneMaxSize(event): void {
@@ -105,7 +97,7 @@ export class BuyComponent implements OnInit {
       value = value.replace(/\D/g, '');
 
       if (value.length < 11) {
-        toast.makeText('Numero de telefone inválido, informe DDI, DDD e numero de telefone');
+        this.toastHelper.makeText('Numero de telefone inválido, informe DDI, DDD e numero de telefone');
         this.buyForm.patchValue({
           establishmentNumber: ''
         });
@@ -120,15 +112,5 @@ export class BuyComponent implements OnInit {
         establishmentNumber: '+' + value.replace(/\D/g, '')
       });
     }
-  }
-
-  private callModalReceipt(data: Transaction): void {
-    let options: ModalDialogOptions = {
-      context: data,
-      fullscreen: false,
-      viewContainerRef: this.vcRef
-    };
-
-    this.modalService.showModal(ReceiptComponent, options).then((result: any) => {});
   }
 }

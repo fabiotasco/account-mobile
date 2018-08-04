@@ -7,6 +7,7 @@ import { NgShadowModule } from 'nativescript-ng-shadow';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { SharedModule } from '~/shared/shared.module';
+import { CreditComponent } from '~/mobile/dashboard/credit-component/credit.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { SharedModule } from '~/shared/shared.module';
     SharedModule
   ],
   exports: [],
-  declarations: [DashboardComponent, BuyComponent],
+  declarations: [DashboardComponent, BuyComponent, CreditComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA]
 })

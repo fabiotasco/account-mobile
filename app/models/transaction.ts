@@ -8,7 +8,7 @@ export class Transaction {
   constructor() {}
 }
 
-export interface Buy {
+export interface TransactionData {
   pan: string;
   amount: number;
   /* establishmentNumber: number; */

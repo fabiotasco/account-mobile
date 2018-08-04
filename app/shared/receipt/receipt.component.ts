@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ModalDialogParams } from 'nativescript-angular/directives/dialogs';
 import { Transaction } from '~/models/transaction';
 import { transactions } from '~/canonicals/constants';
-
 @Component({
   moduleId: module.id,
   selector: 'pimpo-receipt',
