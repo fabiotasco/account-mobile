@@ -4,17 +4,17 @@ import * as Permissions from 'nativescript-permissions';
 import { Telephony } from 'nativescript-telephony';
 import { SimCardData } from '~/canonicals/sim-card-data';
 import { EnrollService } from '~/services/enroll.service';
-import { Page } from 'ui/page';
+import { Page } from 'tns-core-modules/ui/page/page';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RouterExtensions } from 'nativescript-angular/router';
-import { getString, setString } from 'tns-core-modules/application-settings';
-import * as app from 'application';
+import { getString, setString } from 'tns-core-modules/application-settings/application-settings';
 import { userSession, simDataSession } from '~/canonicals/constants';
 import * as Toast from 'nativescript-toast';
-import { device } from 'tns-core-modules/platform';
-import { TextField } from 'ui/text-field';
+import { device } from 'tns-core-modules/platform/platform';
+import { TextField } from 'tns-core-modules/ui/text-field/text-field';
 import { Account } from '~/models/account';
-import * as dialog from 'ui/dialogs';
+import { HttpErrorResponse } from '@angular/common/http';
+import { exit } from 'nativescript-exit';
 
 declare var android: any;
 
@@ -27,6 +27,7 @@ declare var android: any;
 export class EnrollmentComponent implements OnInit {
   enrollForm: FormGroup;
   permissionDenied: boolean;
+  loading: boolean = true;
 
   constructor(private fb: FormBuilder, private page: Page, private enrollService: EnrollService, private router: RouterExtensions) {}
 
@@ -117,9 +118,13 @@ export class EnrollmentComponent implements OnInit {
         setString(simDataSession, JSON.stringify(simCardData));
         this.goToDashBoard(JSON.stringify(result));
       },
-      error => {
-        Toast.makeText('Não foi possivel obter os dados do seu dispositivo', '3000').show();
-        this.permissionDenied = true;
+      (error: HttpErrorResponse) => {
+        Toast.makeText('Não foi possivel conectar-se ao servidor. Tente mais tarde.', '5000').show();
+        this.permissionDenied = false;
+
+        setTimeout(() => {
+          exit();
+        }, 4000);
       }
     );
   }

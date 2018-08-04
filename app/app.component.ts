@@ -4,7 +4,7 @@ import * as Permissions from 'nativescript-permissions';
 import { Telephony } from 'nativescript-telephony';
 import { SimCardData } from '~/canonicals/sim-card-data';
 import { EnrollService } from '~/services/enroll.service';
-import { Page } from 'ui/page';
+import { Page } from 'tns-core-modules/ui/page/page';
 import { RouterExtensions } from 'nativescript-angular/router';
 
 declare var android: any;

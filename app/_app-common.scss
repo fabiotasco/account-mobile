@@ -67,6 +67,14 @@ $btn-color: $primary;
   background-color: $primary;
 }
 
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.bg-secondary-gradient {
+  background: linear-gradient(to bottom, $secondary, $secondary-light);
+}
+
 .bg-primary-gradient {
   background: linear-gradient(to bottom, $primary, $primary-light);
 }

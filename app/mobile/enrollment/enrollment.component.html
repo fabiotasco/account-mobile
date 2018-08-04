@@ -1,6 +1,9 @@
 <GridLayout rows="200,250" class="background">
   <Image row="0" src="res://logo" class="m-b-20"></Image>
 
+
+  <ActivityIndicator width="80" height="80" row="1" [busy]="loading" *ngIf="!permissionDenied" class="activity-indicator"></ActivityIndicator>
+
   <StackLayout row="1" class="card" [formGroup]="enrollForm" *ngIf="permissionDenied">
     <Label text="Criar uma conta" class="h2 " textWrap="true"></Label>
     <Label text="É preciso informar o numero de telefone no seguinte formato: DDI+DDD+Telefone" textWrap="true"></Label>

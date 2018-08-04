@@ -3,7 +3,7 @@ import { ModalDialogOptions, ModalDialogService } from 'nativescript-angular/dir
 import { ReceiptComponent } from '~/shared/receipt/receipt.component';
 import { ViewContainerRef, OnInit } from '@angular/core';
 import * as toast from 'nativescript-toast';
-import * as dialogs from 'ui/dialogs';
+import * as dialogs from 'tns-core-modules/ui/dialogs/dialogs';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { userSession } from '~/canonicals/constants';
 import { getString } from 'tns-core-modules/application-settings/application-settings';
