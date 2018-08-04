@@ -118,7 +118,6 @@ export class EnrollmentComponent implements OnInit {
         this.goToDashBoard(JSON.stringify(result));
       },
       error => {
-        console.log(JSON.stringify(error));
         Toast.makeText('Não foi possivel obter os dados do seu dispositivo', '3000').show();
         this.permissionDenied = true;
       }

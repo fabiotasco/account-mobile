@@ -33,6 +33,10 @@ $btn-color: $primary;
   background-color: $primary;
 }
 
+.body {
+  color: #999;
+}
+
 .action-bar {
   background-color: $primary;
   color: $on-primary;
@@ -61,6 +65,10 @@ $btn-color: $primary;
 
 .bg-primary {
   background-color: $primary;
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(to bottom, $primary, $primary-light);
 }
 
 .bg-secondary {

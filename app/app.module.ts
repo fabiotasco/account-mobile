@@ -12,6 +12,7 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { TransactionService } from '~/services/transaction.service';
 import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
+import { GlobalEventManager } from '~/services/global-event-manager';
 
 registerLocaleData(ptBr);
 
@@ -23,6 +24,7 @@ registerLocaleData(ptBr);
     EnrollService,
     TransactionService,
     ModalDialogService,
+    GlobalEventManager,
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR'

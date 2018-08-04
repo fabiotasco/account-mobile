@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { SharedModule } from '~/shared/shared.module';
 import { CreditComponent } from '~/mobile/dashboard/credit-component/credit.component';
+import { StatementComponent } from '~/mobile/dashboard/statement-component/statement.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { CreditComponent } from '~/mobile/dashboard/credit-component/credit.comp
     SharedModule
   ],
   exports: [],
-  declarations: [DashboardComponent, BuyComponent, CreditComponent],
+  declarations: [DashboardComponent, BuyComponent, CreditComponent, StatementComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA]
 })
