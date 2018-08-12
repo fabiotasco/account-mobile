@@ -40,15 +40,14 @@ export class EnrollmentComponent implements OnInit {
       phoneNumber: ['', Validators.required]
     });
 
-    const userLogged = getString(userSession, '');
-    if (!userLogged) {
+    const userSessionPan = getString(userSession, '');
+    if (!userSessionPan) {
       this.getReadSimCardDataPermission();
       return;
     }
 
-    const account: Account = JSON.parse(getString(userSession, ''));
     const simData = new SimCardData();
-    simData.phoneNumber = account.pan;
+    simData.phoneNumber = userSessionPan;
     this.doEnroll(simData);
   }
 
@@ -59,7 +58,7 @@ export class EnrollmentComponent implements OnInit {
       simCardData.phoneNumber = `+${formValues.phoneDDI}${formValues.phoneNumber}`;
       simCardData.deviceId = device.uuid;
       simCardData.deviceSoftwareVersion = device.osVersion;
-
+      this.permissionDenied = false;
       this.doEnroll(simCardData);
       return;
     }
@@ -114,26 +113,21 @@ export class EnrollmentComponent implements OnInit {
   private doEnroll(simCardData: SimCardData): void {
     this.enrollService.enroll(simCardData).subscribe(
       (result: any) => {
-        setString(userSession, JSON.stringify(result.content));
-        setString(simDataSession, JSON.stringify(simCardData));
-        this.goToDashBoard(JSON.stringify(result));
+        setString(userSession, result.pan);
+        this.goToDashBoard();
       },
       (error: HttpErrorResponse) => {
         Toast.makeText('Não foi possivel conectar-se ao servidor. Tente mais tarde.', '5000').show();
         this.permissionDenied = false;
-
         setTimeout(() => {
           exit();
-        }, 4000);
+        }, 5000);
       }
     );
   }
 
-  private goToDashBoard(user: string): void {
+  private goToDashBoard(): void {
     this.router.navigate(['dashboard'], {
-      queryParams: {
-        userLogged: user
-      },
       clearHistory: true
     });
   }

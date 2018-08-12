@@ -1,0 +1,11 @@
+<ActionBar class="action-bar">
+  <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+    <GridLayout rows="*,*" columns="50,*" margin="10">
+      <Image row="0" col="0" rowSpan="2" src="res://avatar" class="thumb img-circle"></Image>
+      <Label row="0" col="1" text="Saldo" class="h3 text-for-primary" paddingLeft="10"></Label>
+      <Label row="1" col="1" [text]="(balance$ | async) | currency : 'BRL' : 'symbol'" paddingLeft="10"></Label>
+    </GridLayout>
+  </StackLayout>
+  <ActionItem text="Sair" color="#FFF" android.position="popup">
+  </ActionItem>
+</ActionBar>

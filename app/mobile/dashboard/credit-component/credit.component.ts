@@ -5,10 +5,11 @@ import { userSession } from '~/canonicals/constants';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { TransactionService } from '~/services/transaction.service';
 import { TransactionData } from '~/models/transaction';
-import { Account } from '~/models/account';
 import { BaseComponent } from '~/mobile/base.component';
 import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { EnrollService } from '~/services/enroll.service';
 
 @Component({
   moduleId: module.id,
@@ -23,10 +24,12 @@ export class CreditComponent extends BaseComponent implements OnInit {
     private fb: FormBuilder,
     protected router: RouterExtensions,
     private transactionService: TransactionService,
+    protected page: Page,
+    protected enrollService: EnrollService,
     protected vcRef: ViewContainerRef,
     protected modalService: ModalDialogService
   ) {
-    super(modalService, vcRef, router);
+    super(page, modalService, vcRef, router, enrollService);
   }
 
   ngOnInit() {
@@ -40,9 +43,8 @@ export class CreditComponent extends BaseComponent implements OnInit {
 
   register() {
     const creditValue = parseFloat(this.creditForm.get('creditValue').value).toFixed(2);
-
     const creditObj: TransactionData = {
-      pan: this.userLogged.pan,
+      pan: getString(userSession),
       amount: parseFloat(creditValue)
     };
 
@@ -50,6 +52,7 @@ export class CreditComponent extends BaseComponent implements OnInit {
       res => {
         this.toastHelper.makeText('Foi creditado em sua conta: R$' + creditObj.amount.toFixed(2), '3000').show();
         this.creditForm.reset();
+        this.enrollService.updateAccountData();
         this.callModalReceipt(res.content);
       },
       (fail: HttpErrorResponse) => {

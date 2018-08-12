@@ -1,18 +1,18 @@
 export class SimCardData {
-  'phoneNumber': String;
-  'deviceId': String;
-  'deviceSoftwareVersion': String;
-  'simSerialNumber': String;
-  'subscriberId': String;
-  'countryCode': String;
-  'simOperator': String;
-  'carrierName': String;
-  'callState': Number;
-  'dataActivity': Number;
-  'networkType': Number;
-  'phoneType': Number;
-  'simState': Number;
-  'isNetworkRoaming': Boolean;
-  'mcc': String;
-  'mnc': String;
+  'phoneNumber': string;
+  'deviceId': string;
+  'deviceSoftwareVersion': string;
+  'simSerialNumber': string;
+  'subscriberId': string;
+  'countryCode': string;
+  'simOperator': string;
+  'carrierName': string;
+  'callState': number;
+  'dataActivity': number;
+  'networkType': number;
+  'phoneType': number;
+  'simState': number;
+  'isNetworkRoaming': boolean;
+  'mcc': string;
+  'mnc': string;
 }

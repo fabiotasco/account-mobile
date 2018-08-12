@@ -5,19 +5,27 @@ import { ViewContainerRef, OnInit } from '@angular/core';
 import * as toast from 'nativescript-toast';
 import * as dialogs from 'tns-core-modules/ui/dialogs/dialogs';
 import { RouterExtensions } from 'nativescript-angular/router';
-import { userSession } from '~/canonicals/constants';
-import { getString } from 'tns-core-modules/application-settings/application-settings';
-import { Account } from '~/models/account';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { EnrollService } from '~/services/enroll.service';
 
 export class BaseComponent implements OnInit {
-  userLogged: Account;
   toastHelper = toast;
   dialogsHelper = dialogs;
 
-  constructor(protected modalService: ModalDialogService, protected vcRef: ViewContainerRef, protected router: RouterExtensions) {}
+  constructor(
+    protected page: Page,
+    protected modalService: ModalDialogService,
+    protected vcRef: ViewContainerRef,
+    protected router: RouterExtensions,
+    protected enrollService: EnrollService
+  ) {}
 
   ngOnInit() {
-    this.userLogged = JSON.parse(getString(userSession, ''));
+    this.page.actionBarHidden = true;
+    /*  this.accountPan = getString(userSession, '');
+    const simData = new SimCardData();
+    simData.phoneNumber = this.accountPan; */
+    this.enrollService.account$;
   }
 
   protected callModalReceipt(data: Transaction): void {

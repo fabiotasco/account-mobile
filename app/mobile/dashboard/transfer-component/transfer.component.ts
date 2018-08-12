@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RouterExtensions } from 'nativescript-angular/router';
-import { TransactionService } from '~/services/transaction.service';
 import { TransactionData } from '~/models/transaction';
 import { BaseComponent } from '~/mobile/base.component';
 import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { EnrollService } from '~/services/enroll.service';
+import { getString } from 'tns-core-modules/application-settings/application-settings';
+import { userSession } from '~/canonicals/constants';
 
 @Component({
   moduleId: module.id,
@@ -18,12 +20,13 @@ export class TransferComponent extends BaseComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    protected page: Page,
     protected router: RouterExtensions,
-    private transactionService: TransactionService,
+    protected enrollService: EnrollService,
     protected vcRef: ViewContainerRef,
     protected modalService: ModalDialogService
   ) {
-    super(modalService, vcRef, router);
+    super(page, modalService, vcRef, router, enrollService);
   }
 
   ngOnInit() {
@@ -39,7 +42,7 @@ export class TransferComponent extends BaseComponent implements OnInit {
     const transferValue = parseFloat(this.transferForm.get('transferValue').value).toFixed(2);
 
     const transferObj: TransactionData = {
-      pan: this.userLogged.pan,
+      pan: getString(userSession),
       amount: parseFloat(transferValue)
     };
 
@@ -48,23 +51,5 @@ export class TransferComponent extends BaseComponent implements OnInit {
       message: 'Esta funcionalidade estará disponivel em breve',
       okButtonText: 'Ok'
     });
-
-    /* this.transactionService.registerCredit(transferObj).subscribe(
-      res => {
-        this.toastHelper.makeText('Foi creditado em sua conta: R$' + transferObj.amount.toFixed(2), '3000').show();
-        this.transferForm.reset();
-        this.callModalReceipt(res.content);
-      },
-      (fail: HttpErrorResponse) => {
-        const err = fail.error;
-        const error = err.errors[0];
-
-        this.dialogsHelper.alert({
-          title: 'Códido: ' + error.code,
-          message: error.message,
-          okButtonText: 'Ok'
-        });
-      }
-    ); */
   }
 }
