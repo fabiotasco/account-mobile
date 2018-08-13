@@ -9,12 +9,18 @@ import { TransferComponent } from '~/mobile/dashboard/transfer-component/transfe
 import { MyAccountComponent } from '~/mobile/dashboard/my-account/my-account.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'buy', component: BuyComponent },
-  { path: 'credit', component: CreditComponent },
-  { path: 'statement', component: StatementComponent },
-  { path: 'transfer', component: TransferComponent },
-  { path: 'my-account', component: MyAccountComponent }
+  { path: '', redirectTo: '/dashboard/statement', pathMatch: 'full' },
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [
+      { path: 'buy', component: BuyComponent },
+      { path: 'credit', component: CreditComponent },
+      { path: 'statement', component: StatementComponent },
+      { path: 'transfer', component: TransferComponent },
+      { path: 'my-account', component: MyAccountComponent }
+    ]
+  }
 ];
 
 @NgModule({

@@ -5,6 +5,8 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import * as appversion from 'nativescript-appversion';
 import { exit } from 'nativescript-exit';
 import * as utilsModule from 'utils/utils';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { EnrollService } from '~/services/enroll.service';
 
 @Component({
   moduleId: module.id,
@@ -15,8 +17,14 @@ import * as utilsModule from 'utils/utils';
 export class MyAccountComponent extends BaseComponent implements OnInit {
   version: string;
 
-  constructor(protected vcRef: ViewContainerRef, protected modalService: ModalDialogService, protected router: RouterExtensions) {
-    super(modalService, vcRef, router);
+  constructor(
+    protected page: Page,
+    protected vcRef: ViewContainerRef,
+    protected modalService: ModalDialogService,
+    protected enrollService: EnrollService,
+    protected router: RouterExtensions
+  ) {
+    super(page, modalService, vcRef, router, enrollService);
   }
 
   ngOnInit() {

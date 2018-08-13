@@ -5,12 +5,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field/text-field';
 import { TransactionService } from '~/services/transaction.service';
-import { TransactionData, Transaction } from '~/models/transaction';
+import { TransactionData } from '~/models/transaction';
 import { EnrollService } from '~/services/enroll.service';
-import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/directives/dialogs';
+import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { BaseComponent } from '~/mobile/base.component';
+import { getString } from 'tns-core-modules/application-settings/application-settings';
+import { userSession } from '~/canonicals/constants';
 
 @Component({
   moduleId: module.id,
@@ -26,13 +28,13 @@ export class BuyComponent extends BaseComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     protected router: RouterExtensions,
-    private page: Page,
+    protected page: Page,
     private transactionService: TransactionService,
-    private enrollService: EnrollService,
+    protected enrollService: EnrollService,
     protected modalService: ModalDialogService,
     protected vcRef: ViewContainerRef
   ) {
-    super(modalService, vcRef, router);
+    super(page, modalService, vcRef, router, enrollService);
   }
 
   ngOnInit() {
@@ -54,15 +56,15 @@ export class BuyComponent extends BaseComponent implements OnInit {
     const productValue = parseFloat(this.buyForm.get('productValue').value).toFixed(2);
 
     const buyObj: TransactionData = {
-      pan: this.userLogged.pan,
+      pan: getString(userSession),
       amount: parseFloat(productValue)
-      /*  establishmentNumber: this.buyForm.get('establishmentNumber').value */
     };
 
     this.transactionService.registerBuy(buyObj).subscribe(
       res => {
         this.toastHelper.makeText('Compra realizada com sucesso', '3000').show();
         this.buyForm.reset();
+        this.enrollService.updateAccountData();
         this.callModalReceipt(res.content);
       },
       (fail: HttpErrorResponse) => {

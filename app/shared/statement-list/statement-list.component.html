@@ -1,0 +1,17 @@
+<ListView [items]="statements" *ngIf="statements else noAccount" class="list-group" row="1" col="0">
+  <ng-template let-item="item" let-odd="odd" let-even="even">
+    <GridLayout rows="*,*,*" [columns]="showActionButton ? '20, *, 100,50' : '20, *, 100'" class="list-group-item">
+      <StackLayout height="40" width="3" class="bg-primary" row="0" col="0" rowSpan="3"></StackLayout>
+      <Label [text]="getTransactionType(item.type)" class="h3 list-group-item-heading" row="0" col="1" rowSpan="2"></Label>
+      <Label [text]="item.createdAt | date:'dd/MM/yyyy HH:mm'" class="list-group-item-body body p-y-15" row="1" col="1" rowSpan="2"></Label>
+      <Label [text]="item.amount | currency:'BRL':'symbol'" class="h3 list-group-item-heading" row="0" col="2" rowSpan="3"></Label>
+      <Image src="res://cashback" *ngIf="showActionButton && item.type === 'purchase'" width="24" row="0" col="3" (tap)="deleteActionTap(item.id)" rowSpan="3"></Image>
+    </GridLayout>
+  </ng-template>
+</ListView>
+
+<ng-template #noAccount>
+  <StackLayout>
+    <Label text="Nenhuma transação no período." class="text-center" textWrap="true"></Label>
+  </StackLayout>
+</ng-template>

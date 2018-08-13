@@ -1,33 +1,25 @@
 <GridLayout>
-  <ActionBar class="action-bar">
-    <NavigationButton text="Back" (tap)="back()" android.systemIcon="ic_ab_back_material_dark"></NavigationButton>
-    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
-      <Label text="PimpoPay (Minha Conta)" class="action-title"></Label>
-    </StackLayout>
-  </ActionBar>
-
   <StackLayout>
     <Label text="Dados da Conta" class="h3 m-10" textWrap="true"></Label>
     <StackLayout class="hr-light m-b-10"></StackLayout>
 
     <FlexboxLayout flexDirection="column" justifyContent="center" height="15%">
-      <GridLayout rows="*" columns="180,*">
+      <GridLayout>
         <Label text="Sua conta: " class="h3 p-l-10" row="0" col="0" textWrap="true"></Label>
-        <Label [text]="userLogged.pan" class="body m-t-25 p-l-10" fontSize="20" row="0" col="0" textWrap="true"></Label>
-        <Label text="Saldo atual: " class="h3  p-l-20 " row="0" col="1" textWrap="true"></Label>
-        <Label [text]="userLogged.balance | currency:'BRL':'symbol'" class="body m-t-25 p-l-20 " fontSize="20" row="0" col="1" textWrap="true"></Label>
+        <Label [text]="(enrollService.account$ | async)?.pan" class="body m-t-25 p-l-10" fontSize="20" row="0" col="0" textWrap="true"></Label>
       </GridLayout>
     </FlexboxLayout>
 
     <FlexboxLayout flexDirection="column" justifyContent="space-between" height="80%">
 
       <StackLayout>
-        <Button text="Logout" width="100" class="btn btn-primary" (tap)="exit()"></Button>
+        <Label text="&nbsp;" textWrap="true"></Label>
+
       </StackLayout>
 
-      <StackLayout class="text-center bg-primary-gradient">
-        <Label [text]="'Versão do APP: '+version+'v'" class="body m-10 text-for-primary" textWrap="true"></Label>
-        <Label class="p-x-10 text-for-primary" text="Ao utilizar nosso aplicativo, você esta concordando com nossos termos de uso, clique abaixo para lê-lo." textWrap="true"></Label>
+      <StackLayout class="text-center">
+        <Label [text]="'Versão do APP: '+version+'v'" class="body m-10" textWrap="true"></Label>
+        <Label class="p-x-10" text="Ao utilizar nosso aplicativo, você esta concordando com nossos termos de uso, clique abaixo para lê-lo." textWrap="true"></Label>
         <Label text="Termos de Uso" (tap)="goToUserTerms()" class="body text-secondary m-10"></Label>
       </StackLayout>
     </FlexboxLayout>

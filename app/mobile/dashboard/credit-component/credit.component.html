@@ -1,32 +1,9 @@
 <GridLayout class="background">
-  <ActionBar class="action-bar">
-    <NavigationButton text="Back" (tap)="back()" android.systemIcon="ic_ab_back_material_dark"></NavigationButton>
-    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
-      <Label text="PimpoPay (Creditar conta)" class="action-title"></Label>
-    </StackLayout>
-  </ActionBar>
 
   <StackLayout>
 
-    <FlexboxLayout flexDirection="column" [formGroup]="creditForm" justifyContent="space-between" shadow="6" class="part-form-buy m-15" alignItems="center"
+    <FlexboxLayout flexDirection="column" [formGroup]="creditForm" justifyContent="space-between" shadow="6" class="part-form-buy m-15 p-t-20" alignItems="center"
       height="90%">
-
-      <FlexboxLayout flexDirection="column" class="bg-primary-gradient" alignSelf="flex-start" height="15%">
-        <GridLayout rows="*" columns="180,*">
-          <Label text="Sua conta: " class="h3 p-l-10 text-for-primary" row="0" col="0" textWrap="true"></Label>
-          <Label [text]="userLogged.pan" class="body m-t-25 p-l-10 text-for-primary" fontSize="20" row="0" col="0" textWrap="true"></Label>
-          <Label text="Saldo atual: " class="h3  p-l-20 text-for-primary" row="0" col="1" textWrap="true"></Label>
-          <Label [text]="userLogged.balance | currency:'BRL':'symbol'" class="body m-t-25 p-l-20 text-for-primary" fontSize="20" row="0" col="1" textWrap="true"></Label>
-        </GridLayout>
-      </FlexboxLayout>
-
-
-      <!--       <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center" class="m-t-5">
-        <Label class="form-label" text="Telefone da Loja:" textWrap="true"></Label>
-        <TextField name="establishmentNumber" maxLength="19" (textChange)="phoneMaxSize($event)" (blur)="formatPhoneNumber($event)" keyboardType="phone" hint="Ex: 55 11 99999 9999"
-          class="text-field text-center" [text]="formatedPhone"></TextField>
-        <Label text="Informe apenas nṹmeros" class="body" fontSize="14" textWrap="true"></Label>
-      </FlexboxLayout> -->
 
       <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center">
         <Label class="form-label" text="Valor a creditar" textWrap="true"></Label>

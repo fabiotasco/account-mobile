@@ -1,32 +1,5 @@
 <GridLayout>
-
-  <ActionBar class="action-bar">
-    <NavigationButton text="Back" (tap)="back()" android.systemIcon="ic_ab_back_material_dark"></NavigationButton>
-    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
-      <Label text="PimpoPay (Extrato)" class="action-title"></Label>
-    </StackLayout>
-  </ActionBar>
-
   <StackLayout>
-    <GridLayout rows="120,*" columns="*">
-      <FlexboxLayout flexDirection="column" class="bg-primary-gradient" justifyContent="center" alignItems="center" row="0" col="0">
-        <Label text="Saldo Atual" class="h3 text-center p-10 text-for-primary" textWrap="true"></Label>
-        <Label [text]="userLogged.balance | currency:'BRL':'symbol'" class="text-center body text-for-primary" fontSize="20" textWrap="true"></Label>
-      </FlexboxLayout>
-
-
-      <ListView [items]="statements" class="list-group" row="1" col="0">
-        <ng-template let-item="item" let-odd="odd" let-even="even">
-          <GridLayout rows="*,*,*" columns="20, *, 100,50" class="list-group-item">
-            <StackLayout height="40" width="3" class="bg-primary" row="0" col="0" rowSpan="3"></StackLayout>
-            <Label [text]="getTransactionType(item.type)" class="h3 list-group-item-heading" row="0" col="1" rowSpan="2"></Label>
-            <Label [text]="item.createdAt" class="list-group-item-body body" row="1" col="1" rowSpan="2"></Label>
-            <Label [text]="item.amount | currency:'BRL':'symbol'" class="h3 list-group-item-heading" row="0" col="2" rowSpan="3"></Label>
-            <Image src="res://cashback" *ngIf="item.type === 'purchase'" width="24" row="0" col="3" (tap)="cancelTransaction(item.id)" rowSpan="3"></Image>
-          </GridLayout>
-        </ng-template>
-      </ListView>
-
-    </GridLayout>
+    <statement-list (deleteAction)="cancelTransaction($event)" [statements]="statements$ | async" [showActionButton]="true"></statement-list>
   </StackLayout>
 </GridLayout>

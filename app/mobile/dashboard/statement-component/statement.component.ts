@@ -4,12 +4,10 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
 import { Transaction } from '~/models/transaction';
 import { TransactionService } from '~/services/transaction.service';
-import { transactions, simDataSession } from '~/canonicals/constants';
 import { HttpErrorResponse } from '@angular/common/http';
 import { EnrollService } from '~/services/enroll.service';
-import { SimCardData } from '~/canonicals/sim-card-data';
-import { getString } from 'tns-core-modules/application-settings/application-settings';
-import { Account } from '~/models/account';
+import { Observable } from 'rxjs';
+import { Page } from 'tns-core-modules/ui/page/page';
 
 @Component({
   moduleId: module.id,
@@ -18,30 +16,22 @@ import { Account } from '~/models/account';
   styleUrls: ['./statement.component.css']
 })
 export class StatementComponent extends BaseComponent implements OnInit {
-  statements: Transaction[] = [];
+  statements$: Observable<Transaction[]>;
 
   constructor(
-    private enrollService: EnrollService,
     private transacttionService: TransactionService,
+    protected page: Page,
     protected router: RouterExtensions,
     protected vcRef: ViewContainerRef,
+    protected enrollService: EnrollService,
     protected modalService: ModalDialogService
   ) {
-    super(modalService, vcRef, router);
+    super(page, modalService, vcRef, router, enrollService);
   }
 
   ngOnInit() {
     super.ngOnInit();
-    const simData: SimCardData = JSON.parse(getString(simDataSession, ''));
-
-    this.enrollService.enroll(simData).subscribe((result: any) => {
-      this.userLogged = result.content;
-    });
     this.updateList();
-  }
-
-  getTransactionType(type): void {
-    return transactions[type];
   }
 
   cancelTransaction(id: number): void {
@@ -56,7 +46,7 @@ export class StatementComponent extends BaseComponent implements OnInit {
         if (result) {
           this.transacttionService.deleteTransaction(id).subscribe(
             (result: Transaction) => {
-              this.userLogged.balance = this.userLogged.balance + result.amount;
+              this.enrollService.updateAccountData();
               this.callModalReceipt(result);
               this.updateList();
             },
@@ -74,8 +64,6 @@ export class StatementComponent extends BaseComponent implements OnInit {
   }
 
   private updateList(): void {
-    this.transacttionService.getStatements(this.userLogged.pan).subscribe((transactions: Transaction[]) => {
-      this.statements = transactions;
-    });
+    this.statements$ = this.transacttionService.getStatements();
   }
 }

@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { TransactionData } from '~/models/transaction';
+import { TransactionData, Transaction } from '~/models/transaction';
 import { Api } from '~/canonicals/api';
 import * as _ from 'lodash';
+import { getString } from 'tns-core-modules/application-settings/application-settings';
+import { userSession } from '~/canonicals/constants';
 
 @Injectable()
 export class TransactionService {
@@ -18,8 +20,8 @@ export class TransactionService {
     return this.httpClient.post(Api.url + '/account/credit', JSON.stringify(data), { headers: this.createRequestOptions() });
   }
 
-  getStatements(pan: string): Observable<any> {
-    /* TODO: possivelmente este método irá receber parametros para montar a chamada e filtrar os extratos. */
+  getStatements(): Observable<Transaction[]> {
+    const pan = getString(userSession);
     const endpoint = `${Api.url}/account/pan/${pan}/transactions`;
     return this.httpClient.get(endpoint, { headers: this.createRequestOptions() }).pipe(
       map((result: any) => {

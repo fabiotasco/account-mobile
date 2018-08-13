@@ -46,3 +46,8 @@ ListView {
 .font-weight-bold {
   font-weight: bold;
 }
+
+.actived {
+  border-bottom-width: 5;
+  border-color: $secondary;
+}

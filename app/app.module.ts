@@ -2,7 +2,6 @@ import { NgModule, NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
-
 import { AppRoutingModule } from '~/app.routing';
 import { AppComponent } from '~/app.component';
 import { EnrollService } from '~/services/enroll.service';
@@ -12,7 +11,6 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { TransactionService } from '~/services/transaction.service';
 import { ModalDialogService } from 'nativescript-angular/directives/dialogs';
-import { GlobalEventManager } from '~/services/global-event-manager';
 
 registerLocaleData(ptBr);
 
@@ -24,7 +22,6 @@ registerLocaleData(ptBr);
     EnrollService,
     TransactionService,
     ModalDialogService,
-    GlobalEventManager,
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR'
